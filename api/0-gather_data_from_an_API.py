@@ -22,6 +22,6 @@ def employee_statistics(employee_id):
         employee_id = sys.argv(1)
 
     """ Method: Build URL's to gather data """
-    root = https://jsonplaceholder.typicode.com
+    root = "https://jsonplaceholder.typicode.com"
     user = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
     todo = "https://jsonplaceholder.typicode.com/users/{}/todo".format(employee_id)
