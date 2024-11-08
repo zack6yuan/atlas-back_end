@@ -12,7 +12,7 @@ def employee_statistics(employee_id):
         - ValueError - when employee_id is not provided.
         - TypeError - when employee_id is not type "int"
     Returns:
-        - Employee data (completed + uncompleted tasks)
+        - Employee data (complete + incomplete tasks)
     """
     if len(sys.argv) < 2:
         raise ValueError("Plase input empolyee id.")
@@ -21,7 +21,15 @@ def employee_statistics(employee_id):
     else:
         employee_id = sys.argv(1)
 
-    """ Method: Build URL's to gather data """
+    """ Method: Build URL's """
     root = "https://jsonplaceholder.typicode.com"
-    user = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
-    todo = "https://jsonplaceholder.typicode.com/users/{}/todo".format(employee_id)
+    employee_name = requests.get("https://jsonplaceholder.typicode.com/user/{}".format(employee_id)).json()
+    complete = requests.get("https://jsonplaceholder.typucode.com/user/{}/complete".format*(employee_id)).json()
+    incomplete = requests.get("https://jsonplaceholder.typicode.com/user/{}/incomplete".format(employee_id)).json()
+
+    """ Method: Return update """
+    print("Employee {} is done with tasks {}/{}".format(employee_name, complete, incomplete))
+
+
+    if __name__ == "__main__":
+        employee_statistics()
