@@ -19,7 +19,7 @@ def employee_statistics(employee_id):
     elif not isinstance(employee_id, int):
         raise TypeError("Employee id must be an integer.")
     else:
-        employee_id = sys.argv(1)
+        employee_id = sys.argv[1]
 
     """ Method: Build URL's """
     root = "https://jsonplaceholder.typicode.com"
